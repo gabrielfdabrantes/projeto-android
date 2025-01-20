@@ -45,7 +45,7 @@ body {
 header{
     background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));
     
-    max-height: 150px; /* definiu a altura da caixa do cabeçalho */
+    min-height: 150px; /* definiu a altura máximada caixa do cabeçalho */
     text-align: center;
     padding-top: 40px; /* definiu o espaçamento entre o início do texto e o começo da página. */
 }
@@ -65,6 +65,8 @@ header > p {
 
     margin: auto; /* centraliza o conteúdo dentro da caixa, mesmo que aumente ou diminua a tela. */
     padding-bottom: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.373); 
 }
 nav{
