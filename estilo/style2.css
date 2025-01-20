@@ -45,7 +45,7 @@ body {
 header{
     background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));
     
-    height: 150px; /* definiu a altura da caixa do cabeçalho */
+    max-height: 150px; /* definiu a altura da caixa do cabeçalho */
     text-align: center;
     padding-top: 40px; /* definiu o espaçamento entre o início do texto e o começo da página. */
 }
