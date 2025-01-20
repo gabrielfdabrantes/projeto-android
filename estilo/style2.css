@@ -1,0 +1,191 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family:'robo';
+    src: url(../pacote-projeto-d010/fontes/idroid.otf)format(opentype);
+    font-weight: normal;
+    font-style: normal;
+    }
+
+/* Cores usadas: 
+    #c5ebd6
+    #83e1ad
+    #3ddc84
+    #2fa866
+    #1a5c37
+    #063d1e */
+
+/* Tudo que definir nesse pseudo-elemento será definido para o documento inteiro. */
+/* as variáveis funcionam literalmente para facilitar a vida na hora que estiver programando. */
+:root{ 
+    --cor00: #c5ebd6;
+    --cor01: #83e1ad;
+    --cor02: #3ddc84;
+    --cor03: #2fa866;
+    --cor04: #1a5c37;
+    --cor05: #063d1e; 
+
+    --fonte-padrao: Arial, Verdana, Helvetica, san-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'robo', cursive;
+}
+
+/* não que seja necessário, mas é bom deixar uma organização dos estilos na mesma sequência está organizado o código HTML, para que seja fácil de identificar e fazer qualquer alteração. */
+
+ /* seletor universal. Ele vale para todos os elementos. */
+    * {
+        margin: 0px;
+        padding: 0px;
+    }    
+
+body {
+    background-color: var(--cor00);
+    font-family: var(--fonte-padrao);
+  }
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05));
+    
+    height: 150px; /* definiu a altura da caixa do cabeçalho */
+    text-align: center;
+    padding-top: 40px; /* definiu o espaçamento entre o início do texto e o começo da página. */
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px; /* definiu a margem de baixo entre o título e o parágrafo, dando uma distância maior entre eles. */
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267); /* deslocamento horizontal (irá para o lado direito), deslocamento vertical (irá para baixo), embaçamento, cor. */
+}
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 500px; /* largura máxima que ficará esse parágrafo, mesmo que aumente ou diminua a tela. */
+
+    margin: auto; /* centraliza o conteúdo dentro da caixa, mesmo que aumente ou diminua a tela. */
+
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.373); 
+}
+nav{
+    background-color: var(--cor05);
+    padding: 10px; /* espaçamento entre o conteúdo e a caixa. */
+
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.127);
+}
+nav > a {
+    color: var(--cor00);
+    text-decoration: none;
+    padding: 8px;
+    font-weight: bolder;
+}
+
+nav > a:hover {
+    color: var(--cor05);
+    background-color: var(--cor03);
+    border-radius: 3px;
+}
+main {
+    min-width: 300px; /* largura mínima que o conteúdo irá se adequar a tela. */
+    max-width: 1000px; /* largura máxima que o conteúdo irá se adequar a tela. */
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.434);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+}
+
+main h1 {
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+    font-size: 1.6em;
+    font-weight: normal;
+}
+main h2{
+    color: var(--cor04);
+    font-family: var(--fonte-android);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor01), transparent);
+    text-indent: 8px; /* faz a função da tecla TAB ->| */
+}
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em; /* distância de uma linha para a outra. */
+    font-size: 1em;
+}
+main strong {
+    color: var(--cor04);
+    font-weight: bolder;
+}
+main a {
+    text-decoration: none;
+    color: var(--cor05);
+    background-color: var(--cor01);
+    padding: 2px 6px;
+    font-weight: bold;
+}
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor04);
+}
+a.externo::after{
+    content: '\00A0\1F517'; /* dessa forma é adicionado o emoji diretamente no CSS. O primeiro código signfica um espaço em branco (ele equivale ao &nbsp no HTML) e o segundo código é proprialmente o enoji. */
+}
+main img {
+    width: 100%; /* faz com que a imagem preencha sempre 100% da largura do conteúdo da tag main, onde as imagens estão inseridas.*/
+}
+main img .pequena {
+    max-width: 300px; /* faz com que a imagem, mesmo diminua o tamanho da tela, permaneça com uma largura máxima de 350px. */ 
+    display: block;
+    margin: auto;
+}
+
+/* essa div.video é uma gambiarra e eu preciso rever para entender melhor. */
+div.video {
+    background-color: var(--cor05);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 56.5%;
+    position: relative;
+}
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%; 
+}
+
+/* o elemento aside representa um documento periférico ao conteúdo principal do elemento. É como se fosse uma caixa extra dentro da página. */
+aside{
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.17);
+}
+aside > h3 {
+    background-color: var(--cor04);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /* foi usado para "colar" a caixa do título, fazendo parecer que é tudo uma só coisa */
+    border-radius: 10px 10px 0px 0px;
+    
+}
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* muda a bolinha padrão da lista por qualquer emoji. Não é compatível com todo navegador.*/
+    list-style-position: inside; /* fez com que a lista ficasse posicionada dentro do aside e não do main. Por padrão, a caixa de uma lista não inclui os marcadores. */
+    columns: 2; /* divide a lista em colunas. */
+} 
+footer{
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+    font-weight: bolder;
+}
